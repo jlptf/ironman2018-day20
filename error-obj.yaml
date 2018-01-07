@@ -1,0 +1,25 @@
+#####################################
+# 2018 ithome ironman
+# Author: James Lu
+# Topic: k8s 不自賞 - Day 20 常見問題與建議 (1)
+# Url: https://ithelp.ithome.com.tw/articles/10193944
+# Licence: MIT
+#####################################
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+    name: err-obj-nginx
+spec:
+    replicas: 3
+    template:
+      metadata:
+        labels: 
+          app: nginx
+      spec:
+        containers:
+        - name: nginx
+          image: nginx
+        ports:
+        - containerPort: 80
+
